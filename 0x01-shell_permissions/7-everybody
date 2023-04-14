@@ -1,3 +1,2 @@
 #!/bin/bash
-chmod ugo+x select 
-hello
+chmod ugo+x hello
