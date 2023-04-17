@@ -5,3 +5,4 @@ Shell redirections \0-hello_world : script print Hello, world
 lastlines 
 \
 Display the first lines \n
+Display the third line of the line iacta
