@@ -4,3 +4,4 @@ Shell redirections \0-hello_world : script print Hello, world
 \n ./3-twofiles : Display the content of /etc/passwd and /etc/hosts
 lastlines 
 \
+Display the first lines \n
