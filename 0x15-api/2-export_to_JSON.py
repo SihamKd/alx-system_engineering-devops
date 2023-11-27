@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 # csv exported
+# -*- coding: utf-8 -*-
+"""
+Created on Mon
+"""
 import json
 from requests import get
 from sys import argv
