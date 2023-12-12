@@ -1,27 +1,23 @@
 #!/usr/bin/python3
+# get subs
 """
 Created on Tue
 """
-from json import loads
 from requests import get
+from sys import argv
 
 
 def top_ten(subreddit):
-    """queries the Reddit API and prints the titles of the first 10 hot posts
-    listed for a given subreddit.
-    """
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    headers = {
-        'User-Agent':
-        'Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) \
-        Gecko/20100401 Firefox/3.6.3 (FM Scene 4.6.1)'
-    }
-    response = get(url, headers=headers, allow_redirects=False)
-    reddits = response.json()
-
+    """subs"""
+    head = {'User-Agent': 'Dan Kazam'}
     try:
-        children = reddits.get('data').get('children')
-        for i in range(10):
-            print(children[i].get('data').get('title'))
+        count = get('https://www.reddit.com/r/{}/hot.json?count=10'.format(
+            subreddit), headers=head).json().get('data').get('children')
+        print('\n'.join([dic.get('data').get('title')
+                         for dic in count][:10]))
     except:
         print('None')
+
+
+if __name__ == "__main__":
+    top_ten(argv[1])
